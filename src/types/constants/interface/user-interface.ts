@@ -3,10 +3,10 @@ import { IAuth } from "./auth-interface";
 import { IAttachment } from "./setting-interface";
 
 export interface IUser{
-    _id:string,
+    _id?:string,
     name?: string,
     phone?:string,
     email?:string,
     profile_pic?:IAttachment |{},
-    registered_on?:Date,
+    registered_on?:Moment,
 }

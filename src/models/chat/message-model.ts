@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { IChatMessage } from "../../constants/interface/chat-room-interface";
+import { IChatMessage } from "../../types/constants/interface/chat-room-interface";
 export const attachment_schema = new mongoose.Schema({
     url:{type:String},
     key:{type:String},

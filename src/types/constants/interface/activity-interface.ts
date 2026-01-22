@@ -12,4 +12,5 @@ export interface IActivities {
     created_at:Moment,
     created_by:Moment,
     location?:string
+    active?:boolean
 }

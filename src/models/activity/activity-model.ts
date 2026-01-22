@@ -1,6 +1,6 @@
 import mongoose, {Schema} from "mongoose";
-import { Ecordinates } from "../../constants/enum/common-enum";
-import { IActivities } from "../../constants/interface/activity-interface";
+import { Ecordinates } from "../../types/constants/enum/common-enum";
+import { IActivities } from "../../types/constants/interface/activity-interface";
 const attachment_schema = new mongoose.Schema({
     url: { type: String },
     key: { type: String }
@@ -15,6 +15,7 @@ const activity_schema = new mongoose.Schema({
     created_at: { type: Date, default: Date.now() },
     created_by: { type: Schema.Types.ObjectId, ref: "user" },
     location:{type:String},
+    active:{type:Boolean,default:false},
     coordinates: {
         type: {
           type: String,

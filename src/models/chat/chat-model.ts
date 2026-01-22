@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
-import { EMembersStatus } from "../../constants/enum/auth-enum";
-import { IchatRoom } from "../../constants/interface/chat-room-interface";
+import { EMembersStatus } from "../../types/constants/enum/auth-enum";
+import { IchatRoom } from "../../types/constants/interface/chat-room-interface";
 
 const chatRoomMemberSchema = new mongoose.Schema({
     user:{type:Schema.Types.ObjectId,ref:"user",required:true},
