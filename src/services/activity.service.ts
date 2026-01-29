@@ -4,7 +4,7 @@ import { ApiError } from "../utilities/custom/apierror";
 import { ErrorMessages } from "../types/constants/constants";
 import { IUser } from "../types/constants/interface/user-interface";
 import { Ecordinates } from "../types/constants/enum/common-enum";
-import { create } from "../repository/activity.repo";
+import { create, Detail, List } from "../repository/activity.repo";
 
 export const CreateActivity = async(body:IActivities,user:IUser)=>{
     let start_date = body.start_date = moment(body?.start_date);
@@ -22,7 +22,16 @@ export const CreateActivity = async(body:IActivities,user:IUser)=>{
         start_date,
         coordinates,
         name:body?.name,
-        info:body?.info
+        info:body?.info 
     }
     return await  create(activity)
+}
+
+export const ActivityListing = async (latitude,longitude,user:IUser)=>{
+    return await List({longitude,latitude})
+}
+
+
+export const viewDetail = async(activity_id:string,user:IUser)=>{
+    return await Detail({_id:activity_id as string})
 }
