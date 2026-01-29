@@ -8,10 +8,11 @@ const attachment_schema = new mongoose.Schema({
 
 const activity_schema = new mongoose.Schema({
     name:{type:String,required:true},
-    members:[{type:Schema.Types.ObjectId,ref:"user"}],
+    members:{type:[Schema.Types.ObjectId],ref:'user',default:[]},
     images: { type: [attachment_schema], default: [] },
     info: { type: String },
-    date:{type:Date},
+    start_date:{type:Date},
+    end_date:{type:Date},
     created_at: { type: Date, default: Date.now() },
     created_by: { type: Schema.Types.ObjectId, ref: "user" },
     location:{type:String},

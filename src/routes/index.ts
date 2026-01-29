@@ -6,7 +6,7 @@ const ApiEndpoints = (app:Application)=>{
         res.send('WELCOME TO SOCIO BACKEND')
     })
     app.use('/auth',auth_routes)
-    
+    app.use('/activity',activity_routes)
 }
 
 
